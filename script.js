@@ -25,9 +25,7 @@ btnCopyQuote.addEventListener('click', function () {
 
 //FUNÇÕES
 async function generateRandomQuoete() {
-    let category = "happiness"
-    const response = await fetch('https://api.api-ninjas.com/v1/quotes?category=' + category, {
-        url: 'https://api.api-ninjas.com/v1/quotes?category=' + category,
+    const response = await fetch('https://api.api-ninjas.com/v1/quotes?category=', {
         headers: { 'X-Api-Key': 'MK2aJ9fpCEmsvquRPa4D7Q==XEQQ4AfJiI8HRqxT' },
         contentType: 'application/json',
         success: function (result) {
