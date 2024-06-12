@@ -11,16 +11,26 @@ let title = document.getElementById("titleQuote")
 //EVENTOS
 btnGenerateQuote.addEventListener('click', function () {
     generateRandomQuoete().then((response) => {
+        let newTag;
+        if (category.children.length === 0) {
+            newTag = document.createElement("p");
+            newTag.classList.add("tag");
+            category.appendChild(newTag);
+        } else {
+            newTag = category.children[0];
+        }
+
         title.style.display = "none"
+
         let quote = response
         authorName.textContent = quote[0].author
-        category.textContent = quote[0].category
+        newTag.textContent = quote[0].category
         quoteText.textContent = `"${quote[0].quote}"`
     })
 })
 
 btnCopyQuote.addEventListener('click', function () {
-    alert("copiar")
+    copyQuote()
 })
 
 //FUNÇÕES
@@ -36,5 +46,22 @@ async function generateRandomQuoete() {
         }
     })
     return response.json()
+}
+
+function copyQuote() {
+    const quote = quoteText.textContent
+
+    if (!quote || quote.trim() === "") {
+        alert("Não há citação para copiar!");
+        return;
+    }
+
+    const input = document.createElement("input")
+    input.value = quote
+    document.body.appendChild(input)
+    input.select()
+    document.execCommand("copy")
+    document.body.removeChild(input)
+    alert("Texto copiado para a área de transferência!");
 }
 

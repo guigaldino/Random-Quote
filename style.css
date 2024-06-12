@@ -20,7 +20,7 @@ body {
 
 #boxContainer {
     text-align: center;
-    background-color: #4a556736;
+    background-color: #4a556777;
     height: auto;
     padding: 20px;
     border-radius: 15px;
@@ -33,8 +33,9 @@ body {
 
 #authorName {
     font-family: "Outfit", sans-serif;
-    font-size: 25px;
+    font-size: 20px;
     color: white;
+    font-weight: 700;
 }
 
 #category {
@@ -42,9 +43,23 @@ body {
     color: blue;
 }
 
+.tag {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: #6466E9;
+    border: 1.5px solid #6466E9;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 5px;
+    text-transform: capitalize;
+}
+
+
 #quoteText {
     font-family: "Outfit", sans-serif;
     color: #97A3B6;
+    font-size: 25px;
 }
 
 
